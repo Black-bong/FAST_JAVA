@@ -8,17 +8,19 @@ public class Customer {
     int bonusPoint;
     double bonusRatio;
 
-//    public Customer() {
-//        customerGrade = "SILVER";
-//        bonusRatio = 0.01;
-//        System.out.println("Customer 생성자 호출");
-//    }
+    public Customer() {
+        customerGrade = "SILVER";
+        bonusRatio = 0.01;
+        System.out.println("Customer 생성자 호출");
+    }
 
     public Customer(String customerName, int customerID) {
         this.customerName = customerName;
         this.customerID = customerID;
+        customerGrade = "SILVER";
+        bonusRatio = 0.01;
         // 하위 클래스 생성 전에 상위 클래스가 먼저 생성된다.
-        System.out.println("Customer(String, int) 생성자 호출");
+        //System.out.println("Customer(String, int) 생성자 호출");
     }
 
     public int calcPrice(int price) {
