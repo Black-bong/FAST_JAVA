@@ -23,13 +23,25 @@ public class Customer {
         //System.out.println("Customer(String, int) 생성자 호출");
     }
 
-    public int calcPrice(int price) {
+    public String calcPrice(int price) {
         bonusPoint += price * bonusRatio;
-        return price;
+        return customerName
+                + "님이 "
+                + price
+                + "원 지불하셨습니다.\n"
+                + customerName
+                + "님의 현재 보너스 포인트는 "
+                + bonusPoint
+                + "점 입니다.";
     }
 
     public String showCustomerInfo() {
-        return customerName + "님의 등급은 " + customerGrade + "이며, 적립된 포인트는 " + bonusPoint + "점 입니다.";
+        return customerName
+                + "님의 등급은 "
+                + customerGrade
+                + "이며, 적립된 포인트는 "
+                + bonusPoint
+                + "점 입니다.";
     }
 
     public int getCustomerID() {

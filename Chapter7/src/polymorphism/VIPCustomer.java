@@ -5,28 +5,37 @@ public class VIPCustomer extends Customer {
     double salesRatio;
     private int agentID;
 
-//    public VIPCustomer() {
-//        super();
-//        customerGrade = "VIP";
-//        bonusRatio = 0.05;
-//        salesRatio = 0.1;
-//
-//        System.out.println("VIPCustomer 생성자 호출");
-//    }
-
-    public VIPCustomer(String customerName, int customerID) {
-        // Class 상속 시 기본 생성자를 제공하지 않으면 명시적으로 내가 생성자를 호출해줘야한다.
+    public VIPCustomer(String customerName, int customerID, int agentID) {
         super(customerName, customerID);
         customerGrade = "VIP";
         bonusRatio = 0.05;
         salesRatio = 0.1;
-
-        //System.out.println("VIPCustomer(String, int) 생성자 호출");
+        this.agentID = agentID;
     }
 
     @Override
-    public int calcPrice(int price) {
+    public String showCustomerInfo() {
+        return customerName
+                + "님의 등급은 "
+                + customerGrade
+                + "이며, 적립된 포인트는 "
+                + bonusPoint
+                + "점 입니다."
+                + "담당 상담원 번호는 "
+                + agentID
+                + "입니다.";
+    }
+
+    @Override
+    public String calcPrice(int price) {
         bonusPoint += (price * bonusRatio);
-        return price - (int)(price * salesRatio);
+        return customerName
+                + "님이 "
+                + (int)(price - (price * salesRatio))
+                + "원 지불하셨습니다.\n"
+                + customerName
+                + "님의 현재 보너스 포인트는 "
+                + bonusPoint
+                + "점 입니다.";
     }
 }

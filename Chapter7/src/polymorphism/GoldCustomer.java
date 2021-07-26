@@ -11,8 +11,16 @@ public class GoldCustomer extends Customer{
     }
 
     @Override
-    public int calcPrice(int price) {
+    public String calcPrice(int price) {
         bonusPoint += (price * bonusRatio);
-        return price - (int)(price * salesRatio);
+
+        return customerName
+                + "님이 "
+                + (int)(price - (price * salesRatio))
+                + "원 지불하셨습니다.\n"
+                + customerName
+                + "님의 현재 보너스 포인트는 "
+                + bonusPoint
+                + "점 입니다.";
     }
 }
