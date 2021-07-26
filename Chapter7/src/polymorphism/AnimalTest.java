@@ -62,19 +62,14 @@ public class AnimalTest {
     }
 
     public void downCastingTest(ArrayList<Animal> list) {
-        for(int i=0; i<list.size(); i++) {
-            Animal animal = list.get(i);
-
+        for (Animal animal : list) {
             // 다운캐스팅 오류 예방으로 instanceof 를 사용
             // Eagle human = (Eagle)hAnimal;
-            if(animal instanceof Human) {
-                Human human = (Human)animal;
+            if (animal instanceof Human human) {
                 human.readBooks();
-            } else if(animal instanceof Tiger) {
-                Tiger tiger = (Tiger)animal;
+            } else if (animal instanceof Tiger tiger) {
                 tiger.hunting();
-            } else if(animal instanceof Eagle) {
-                Eagle eagle = (Eagle)animal;
+            } else if (animal instanceof Eagle eagle) {
                 eagle.Flying();
             } else {
                 System.out.println("error");
