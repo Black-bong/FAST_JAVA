@@ -19,6 +19,11 @@ class Student{
             return false;
         }
     }
+
+    @Override
+    public int hashCode() {
+        return studentNum;
+    }
 }
 
 public class EqualsTest {
@@ -38,5 +43,8 @@ public class EqualsTest {
         System.out.println(studentLee == studentLee2);
         System.out.println(studentLee == studentSin);
         System.out.println(studentLee.equals(studentSin));
+
+        System.out.println(studentLee.hashCode());
+        System.out.println(studentSin.hashCode());
     }
 }
