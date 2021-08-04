@@ -1,4 +1,4 @@
-package boj8958;
+package bjo8958;
 
 import java.io.BufferedReader;
 import java.io.IOException;
